@@ -84,54 +84,13 @@ Observação: ${obs}`;
 
   window.open(`https://wa.me/5571992863990?text=${mensagem}`, "_blank");
 }
-
-function abrirTabela() {
-  const tabelaHTML = `
-    <html>
-    <head>
-      <title>Tabela de Serviços</title>
-      <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
-        th { background: #f4f4f4; }
-      </style>
-    </head>
-    <body>
-      <h2>Tabela de Serviços</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Serviço</th>
-            <th>Materiais Disponíveis</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Coroa</td><td>Zircônia, Emax, PMMA</td></tr>
-          <tr><td>Protocolo</td><td>Zircônia, PMMA</td></tr>
-          <tr><td>Faceta</td><td>Emax</td></tr>
-          <tr><td>Planejamento</td><td>PMMA</td></tr>
-          <tr><td>Inlay/Onlay</td><td>Emax</td></tr>
-          <tr><td>Coroa Implante</td><td>Zircônia, Emax</td></tr>
-        </tbody>
-      </table>
-    </body>
-    </html>
-  `;
-
   const novaAba = window.open("", "_blank");
   novaAba.document.write(tabelaHTML);
   novaAba.document.close();
 }
 
 function baixarCSV() {
-  const csvContent = `Serviço,Materiais Disponíveis
-Coroa,"Zircônia, Emax, PMMA"
-Protocolo,"Zircônia, PMMA"
-Faceta,"Emax"
-Planejamento,"PMMA"
-Inlay/Onlay,"Emax"
-Coroa Implante,"Zircônia, Emax"`;
+  const csvContent = "tabela1.jpg";
 
   const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
   const link = document.createElement("a");
