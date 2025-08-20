@@ -1,145 +1,148 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instituto Digital Moisés Avelino</title>
-  <link rel="icon" type="logotipo.png" href=logotipo.png">
+  <title>Formulário Odonto House</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#e6f4ea; color:#333;}
-    header { background:#004aad; color:white; padding:10px 20px; display:flex; align-items:center; justify-content:space-between;}
-    header img.logo { height:50px; border-radius:50%; background:#e6f4ea; }
-    header .social img { height:36px; margin-left:15px; border-radius:50%; background:#e6f4ea; cursor:pointer; }
-    main { padding:20px; max-width:900px; margin:auto;}
-    h1 { text-align:center; color:#004aad;}
-    form { background:white; padding:20px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
-    fieldset { border:1px solid #ddd; margin-bottom:15px; padding:15px; border-radius:8px; background:white;}
-    legend { font-weight:bold; color:#004aad;}
-    label { display:block; margin-top:10px; font-weight:bold;}
-    input, select, textarea { width:100%; padding:8px; margin-top:5px; border:1px solid #ccc; border-radius:5px;}
-    textarea { resize:vertical;}
-    button { background:#004aad; color:white; border:none; padding:12px; width:100%; border-radius:5px; cursor:pointer; font-size:16px;}
-    button:hover { background:#003080;}
-    footer { background:#004aad; color:white; text-align:center; padding:15px; margin-top:20px;}
-    footer img { height:32px; margin-top:8px; border-radius:50%; background:#e6f4ea; cursor:pointer;}
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
+    .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h2 { text-align: center; margin-bottom: 20px; }
+    label { display: block; margin: 15px 0 5px; font-weight: bold; }
+    input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
+    textarea { resize: vertical; }
+    button { margin-top: 15px; padding: 12px; width: 100%; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+    .btn-whatsapp { background: #25d366; color: white; }
+    .btn-visualizar { background: #007bff; color: white; }
+    .btn-download { background: #6c757d; color: white; }
+    .btn-instagram { background: transparent; border: none; margin-top: 20px; display: flex; justify-content: center; }
+    .btn-instagram img { width: 40px; height: 40px; }
+    .logo { display: block; margin: 0 auto 20px; max-width: 180px; }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logotipo.png" alt="Instituto Digital Moisés Avelino" class="logo">
-    <div class="social">
-      <a href="https://www.instagram.com/instituto_moises_avelino_?igsh=MTV4dXM1ODI0eWExeQ%3D%3D&utm_source=qr" target="_blank">
-        <img src="instagram_icon.png" alt="Instagram">
-      </a>
-    </div>
-  </header>
-  <main>
-    <h1>Solicitação de Serviço</h1>
-    <form id="servicoForm">
-      <fieldset>
-        <legend>Cliente</legend>
-        <label>Nome do Cliente</label>
-        <input type="text" name="cliente">
-        <label>CRO</label>
-        <input type="text" name="cro">
-        <label>CPF/CNPJ</label>
-        <input type="text" name="cpfcnpj">
-        <label>Endereço</label>
-        <input type="text" name="endereco">
-        <label>Telefone</label>
-        <input type="text" name="telefone">
-      </fieldset>
-      <fieldset>
-        <legend>Paciente</legend>
-        <label>Nome do Paciente</label>
-        <input type="text" name="paciente">
-      </fieldset>
-      <fieldset>
-        <legend>Serviço</legend>
-        <label>Tipo de Serviço</label>
-        <select name="servico">
-          <option>Protocolo</option>
-          <option>Coroa</option>
-          <option>Faceta</option>
-          <option>Bloco</option>
-        </select>
-        <label>Material</label>
-        <select name="material">
-          <option>Zircônia</option>
-          <option>Emax</option>
-          <option>PMMA</option>
-        </select>
-        <label>Cor</label>
-        <input type="text" name="cor">
-        <label>Observações</label>
-        <textarea name="obs"></textarea>
-      </fieldset>
-      <fieldset>
-        <legend>Anexos</legend>
-        <input type="file" id="arquivos" name="arquivos" accept=".stl,.ply" multiple>
-      </fieldset>
-      <button type="submit">Enviar Solicitação</button>
+  <div class="container">
+    <img src="logo.jpg" alt="Logo Odonto House" class="logo">
+    <h2>Formulário Odonto House</h2>
+    <form id="formulario">
+      <label for="cliente">Cliente</label>
+      <input type="text" id="cliente" name="cliente" placeholder="Digite o nome do cliente" required>
+
+      <label for="paciente">Paciente</label>
+      <input type="text" id="paciente" name="paciente" placeholder="Digite o nome do paciente">
+
+      <label for="cor">Cor (Escala Vita Clássica)</label>
+      <input type="text" id="cor" name="cor" placeholder="Ex: A1, A2, B1">
+
+      <label for="servico">Serviço</label>
+      <select id="servico" name="servico" required>
+        <option value="">Selecione um serviço</option>
+        <option value="coroa">Coroa</option>
+        <option value="protocolo">Protocolo</option>
+        <option value="faceta">Faceta</option>
+        <option value="planejamento">Planejamento</option>
+        <option value="inlay_only">Inlay/Onlay</option>
+        <option value="coroa_implante">Coroa Implante</option>
+      </select>
+
+      <label for="material">Material</label>
+      <select id="material" name="material" required>
+        <option value="">Selecione um material</option>
+        <option value="zirconia">Zircônia</option>
+        <option value="emax">Emax</option>
+        <option value="pmma">PMMA</option>
+      </select>
+
+      <label for="obs">Observação</label>
+      <textarea id="obs" name="obs" rows="3" placeholder="Digite observações"></textarea>
+
+      <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
+      <button type="button" class="btn-visualizar" onclick="abrirTabela()">Visualizar Tabela</button>
+      <button type="button" class="btn-download" onclick="baixarCSV()">Baixar Tabela</button>
     </form>
-    <p style="text-align:center; margin-top:20px;">
-      <a href="tabela_servicos.jpeg" download>Tabela de Serviços</a>
-    </p>
-  </main>
-  <footer>
-    <p>Contato WhatsApp: (71) 99286-3990</p>
-    <a href="https://www.instagram.com/instituto_moises_avelino_?igsh=MTV4dXM1ODI0eWExeQ%3D%3D&utm_source=qr" target="_blank">
-      <img src="instagram_icon.png" alt="Instagram">
-    </a>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("cDfXutPGgZv2avweb");
-    })();
 
-    document.getElementById("arquivos").addEventListener("change", function(e) {
-      for (let file of e.target.files) {
-        if (file.size > 50 * 1024 * 1024) {
-          alert("❌ O arquivo " + file.name + " ultrapassa 50MB!");
-          e.target.value = "";
-          return;
-        }
-        if (!file.name.endsWith(".stl") && !file.name.endsWith(".ply")) {
-          alert("❌ Apenas arquivos .stl ou .ply são permitidos.");
-          e.target.value = "";
-          return;
-        }
-      }
-    });
+    <button class="btn-instagram" onclick="window.open('https://www.instagram.com/instituto_moises_avelino_', '_blank')">
+      <img src="instagram.jpg" alt="Instagram">
+    </button>
+  </div>
 
-    document.getElementById("servicoForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      let data = {};
-      formData.forEach((value, key) => data[key] = value);
+<script>
+function enviarWhatsApp() {
+  const cliente = document.getElementById('cliente').value;
+  const paciente = document.getElementById('paciente').value;
+  const cor = document.getElementById('cor').value;
+  const servico = document.getElementById('servico').value;
+  const material = document.getElementById('material').value;
+  const obs = document.getElementById('obs').value;
 
-      // WhatsApp
-      let msg = `Cliente: ${data.cliente}%0A CRO: ${data.cro}%0A CPF/CNPJ: ${data.cpfcnpj}%0A Endereço: ${data.endereco}%0A Telefone: ${data.telefone}%0A Paciente: ${data.paciente}%0A Serviço: ${data.servico}%0A Material: ${data.material}%0A Cor: ${data.cor}%0A Observações: ${data.obs}`;
-      window.open(`https://wa.me/5571992863990?text=${msg}`, "_blank");
+  const mensagem = `Cliente: ${cliente}%0A
+Paciente: ${paciente}%0A
+Cor: ${cor}%0A
+Serviço: ${servico}%0A
+Material: ${material}%0A
+Observação: ${obs}`;
 
-      // EmailJS
-      emailjs.send("service_lnkja83","template_emh68gp",{
-        cliente: data.cliente,
-        cro: data.cro,
-        cpfcnpj: data.cpfcnpj,
-        endereco: data.endereco,
-        telefone: data.telefone,
-        paciente: data.paciente,
-        servico: data.servico,
-        material: data.material,
-        cor: data.cor,
-        obs: data.obs,
-        reply_to: "centrodeusinagemmprotese@gmail.com"
-      }).then(()=>{
-        alert("Solicitação enviada com sucesso!");
-      }).catch((err)=>{
-        alert("Erro ao enviar: " + JSON.stringify(err));
-      });
-    });
-  </script>
+  window.open(`https://wa.me/5571992863990?text=${mensagem}`, "_blank");
+}
+
+function abrirTabela() {
+  const tabelaHTML = `
+    <html>
+    <head>
+      <title>Tabela de Serviços e Materiais</title>
+      <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background: #f4f4f4; }
+      </style>
+    </head>
+    <body>
+      <h2>Tabela de Serviços e Materiais</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Serviço</th>
+            <th>Materiais Disponíveis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Coroa</td><td>Zircônia, Emax, PMMA</td></tr>
+          <tr><td>Protocolo</td><td>Zircônia, PMMA</td></tr>
+          <tr><td>Faceta</td><td>Emax</td></tr>
+          <tr><td>Planejamento</td><td>PMMA</td></tr>
+          <tr><td>Inlay/Onlay</td><td>Emax</td></tr>
+          <tr><td>Coroa Implante</td><td>Zircônia, Emax</td></tr>
+        </tbody>
+      </table>
+    </body>
+    </html>
+  `;
+
+  const novaAba = window.open("", "_blank");
+  novaAba.document.write(tabelaHTML);
+  novaAba.document.close();
+}
+
+function baixarCSV() {
+  const csvContent = `Serviço,Materiais Disponíveis
+Coroa,"Zircônia, Emax, PMMA"
+Protocolo,"Zircônia, PMMA"
+Faceta,"Emax"
+Planejamento,"PMMA"
+Inlay/Onlay,"Emax"
+Coroa Implante,"Zircônia, Emax"`;
+
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(blob);
+  link.setAttribute("href", url);
+  link.setAttribute("download", "tabela_servicos_materiais.csv");
+  link.style.visibility = "hidden";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+</script>
 </body>
 </html>
