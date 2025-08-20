@@ -6,14 +6,14 @@
   <title>Instituto Digital Moisés Avelino</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f9ff; color:#333;}
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#e6f4ea; color:#333;}
     header { background:#004aad; color:white; padding:10px 20px; display:flex; align-items:center; justify-content:space-between;}
-    header img.logo { height:50px; }
-    header .social img { height:32px; margin-left:15px; cursor:pointer; }
+    header img.logo { height:50px; border-radius:50%; background:#e6f4ea; }
+    header .social img { height:36px; margin-left:15px; border-radius:50%; background:#e6f4ea; cursor:pointer; }
     main { padding:20px; max-width:900px; margin:auto;}
     h1 { text-align:center; color:#004aad;}
     form { background:white; padding:20px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
-    fieldset { border:1px solid #ddd; margin-bottom:15px; padding:15px; border-radius:8px;}
+    fieldset { border:1px solid #ddd; margin-bottom:15px; padding:15px; border-radius:8px; background:white;}
     legend { font-weight:bold; color:#004aad;}
     label { display:block; margin-top:10px; font-weight:bold;}
     input, select, textarea { width:100%; padding:8px; margin-top:5px; border:1px solid #ccc; border-radius:5px;}
@@ -21,15 +21,15 @@
     button { background:#004aad; color:white; border:none; padding:12px; width:100%; border-radius:5px; cursor:pointer; font-size:16px;}
     button:hover { background:#003080;}
     footer { background:#004aad; color:white; text-align:center; padding:15px; margin-top:20px;}
-    footer img { height:28px; margin-top:8px; cursor:pointer;}
+    footer img { height:32px; margin-top:8px; border-radius:50%; background:#e6f4ea; cursor:pointer;}
   </style>
 </head>
 <body>
   <header>
-    <img src="logotipo.png" alt="Instituto Digital Moisés Avelino" class="logo">
+    <img src="logo_icon.png" alt="Instituto Digital Moisés Avelino" class="logo">
     <div class="social">
       <a href="https://www.instagram.com/instituto_moises_avelino_?igsh=MTV4dXM1ODI0eWExeQ%3D%3D&utm_source=qr" target="_blank">
-        <img src="instagram.jpeg" alt="Instagram">
+        <img src="instagram_icon.png" alt="Instagram">
       </a>
     </div>
   </header>
@@ -87,7 +87,7 @@
   <footer>
     <p>Contato WhatsApp: (71) 99286-3990</p>
     <a href="https://www.instagram.com/instituto_moises_avelino_?igsh=MTV4dXM1ODI0eWExeQ%3D%3D&utm_source=qr" target="_blank">
-      <img src="instagram.jpeg" alt="Instagram">
+      <img src="instagram_icon.png" alt="Instagram">
     </a>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -122,7 +122,7 @@
       window.open(`https://wa.me/5571992863990?text=${msg}`, "_blank");
 
       // EmailJS
-      emailjs.send("service_lnkja83","template_emh68gp",{
+      emailjs.send("service_omrmh59","template_4hr7ydn",{
         cliente: data.cliente,
         cro: data.cro,
         cpfcnpj: data.cpfcnpj,
