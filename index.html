@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Formulário de servico</title>
+  <title>Formulário de serviço</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -22,8 +21,8 @@
 </head>
 <body>
   <div class="container">
-    <img src="logotipo.png" alt="INSTITUTO MOISES AVELINO" class="logo">
-    <h2>Formulário de servico</h2>
+    <img src="logoo.jpg" alt="Logo INSTITUTO MOISES AVELINO" class="logo">
+    <h2>Formulário de serviço</h2>
     <form id="formulario">
       <label for="cliente">Cliente</label>
       <input type="text" id="cliente" name="cliente" placeholder="Digite o nome do cliente" required>
@@ -37,12 +36,16 @@
       <label for="servico">Serviço</label>
       <select id="servico" name="servico" required>
         <option value="">Selecione um serviço</option>
-        <option value="coroa">Coroa</option>
-        <option value="protocolo">Protocolo</option>
-        <option value="faceta">Faceta</option>
-        <option value="planejamento">Planejamento</option>
-        <option value="inlay_only">Inlay/Onlay</option>
-        <option value="coroa_implante">Coroa Implante</option>
+        <option value="coroa_emax">Coroa de e-max</option>
+        <option value="laminado_emax">Laminados e-max</option>
+        <option value="faceta">Facetas</option>
+        <option value="onlay_inlay">Onlay/Inlay</option>
+        <option value="protese_implante">Prótese sobre implante</option>
+        <option value="coroa_zirconia">Coroa Zircônia</option>
+        <option value="protocolo_zirconia">Protocolo em Zircônia</option>
+        <option value="pmma">PMMA</option>
+        <option value="modelo_impresso">Modelo impresso</option>
+        <option value="planejamento">Planejamento digital</option>
       </select>
 
       <label for="material">Material</label>
@@ -58,11 +61,11 @@
 
       <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
       <button type="button" class="btn-visualizar" onclick="abrirTabela()">Visualizar Tabela</button>
-      <button type="button" class="btn-download" onclick="baixarCSV()">Baixar Tabela</button>
+      <button type="button" class="btn-download" onclick="baixarTabela()">Baixar Tabela</button>
     </form>
 
     <button class="btn-instagram" onclick="window.open('https://www.instagram.com/instituto_moises_avelino_', '_blank')">
-      <img src="instagram.jpg" alt="Instagram">
+      <img src="instagram1.jpg" alt="Instagram">
     </button>
   </div>
 
@@ -84,20 +87,15 @@ Observação: ${obs}`;
 
   window.open(`https://wa.me/5571992863990?text=${mensagem}`, "_blank");
 }
-  const novaAba = window.open("", "_blank");
-  novaAba.document.write(tabelaHTML);
-  novaAba.document.close();
+
+function abrirTabela() {
+  window.open("tabela1.jpg", "_blank");
 }
 
-function baixarCSV() {
-  const csvContent = "tabela1.jpg";
-
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+function baixarTabela() {
   const link = document.createElement("a");
-  const url = URL.createObjectURL(blob);
-  link.setAttribute("href", url);
-  link.setAttribute("download", "tabela1.jpg");
-  link.style.visibility = "tabela1.jpg";
+  link.href = "tabela1.jpg";
+  link.download = "tabela1.jpg";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
