@@ -14,10 +14,11 @@
     .btn-whatsapp { background: #25d366; color: white; }
     .btn-visualizar { background: #007bff; color: white; }
     .btn-download { background: #6c757d; color: white; }
-    .btn-email { background: #ff9800; color: white; }
     .btn-instagram { background: transparent; border: none; margin-top: 20px; display: flex; justify-content: center; }
     .btn-instagram img { width: 70px; height: 70px; }
     .logo { display: block; margin: 0 auto 20px; max-width: 180px; }
+    .email-box { margin-top: 20px; text-align: center; }
+    .email-input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; text-align: center; font-weight: bold; font-size: 16px; }
   </style>
 </head>
 <body>
@@ -63,11 +64,16 @@
 
       <!-- Botões -->
       <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
-      <button type="button" class="btn-email" onclick="enviarEmail()">Enviar por E-mail</button>
       <button type="button" class="btn-visualizar" onclick="abrirTabela()">Visualizar Tabela</button>
       <button type="button" class="btn-download" onclick="baixarTabela()">Baixar Tabela</button>
       <button type="button" class="btn-whatsapp" onclick="abrirSuporte()">💬 Suporte</button>
     </form>
+
+    <!-- Caixa de email para copiar -->
+    <div class="email-box">
+      <label for="emailContato">E-mail de contato</label>
+      <input type="text" id="emailContato" class="email-input" value="centrodeusinagemmprotese@gmail.com" readonly onclick="copiarEmail()">
+    </div>
 
     <button class="btn-instagram" onclick="window.open('https://www.instagram.com/instituto_moises_avelino_', '_blank')">
       <img src="instagram1.jpg" alt="Instagram">
@@ -100,12 +106,6 @@ function abrirSuporte() {
   window.open("https://wa.me/5571993209015?text=Olá,%20preciso%20de%20suporte!", "_blank");
 }
 
-function enviarEmail() {
-  const mensagem = coletarDados().replace(/%0A/g, "\n");
-  const assunto = "Solicitação de Serviço - Instituto Moisés Avelino";
-  window.location.href = `mailto:centrodeusinagemmprotese@gmail.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagem)}`;
-}
-
 function abrirTabela() {
   window.open("tabela1.jpg", "_blank");
 }
@@ -117,6 +117,14 @@ function baixarTabela() {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+}
+
+function copiarEmail() {
+  const emailInput = document.getElementById("emailContato");
+  emailInput.select();
+  emailInput.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(emailInput.value);
+  alert("E-mail copiado: " + emailInput.value);
 }
 </script>
 </body>
