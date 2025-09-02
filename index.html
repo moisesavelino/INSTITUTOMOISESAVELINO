@@ -65,7 +65,7 @@
       <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
       <button type="button" class="btn-visualizar" onclick="abrirTabela()">Visualizar Tabela</button>
       <button type="button" class="btn-download" onclick="baixarTabela()">Baixar Tabela</button>
-      <button type="button" class="btn-suporte" onclick="suporteWhatsApp()">Enviar para WhatsApp</button>
+    
 
 
     </form>
@@ -76,7 +76,6 @@
   </div>
 
 <script>
- function suporteWhatsApp() {
 function enviarWhatsApp() {
   const cliente = document.getElementById('cliente').value;
   const paciente = document.getElementById('paciente').value;
@@ -94,7 +93,7 @@ Observação: ${obs}`;
 
   window.open(`https://wa.me/5571992863990?text=${mensagem}`, "_blank");
 
-  window.open(`https://wa.me/5571993209015);
+ 
 }
 
 function abrirTabela() {
