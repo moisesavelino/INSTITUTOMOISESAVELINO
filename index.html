@@ -65,7 +65,7 @@
       <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
       <button type="button" class="btn-visualizar" onclick="abrirTabela()">Visualizar Tabela</button>
       <button type="button" class="btn-download" onclick="baixarTabela()">Baixar Tabela</button>
-    
+      <button type="button" class="btn-suporte" onclick="suporte-tec.WhatsApp()">suporte</button>
 
 
     </form>
@@ -92,8 +92,10 @@ Material: ${material}%0A
 Observação: ${obs}`;
 
   window.open(`https://wa.me/5571992863990?text=${mensagem}`, "_blank");
-
- 
+  
+<script>
+function suporte-tec.WhatsApp() {
+  window.open(`https://wa.me/5571993209015?text=${mensagem}`, "_blank");
 }
 
 function abrirTabela() {
