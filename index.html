@@ -64,7 +64,7 @@
       <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
       <button type="button" class="btn-visualizar" onclick="abrirTabela()">Visualizar Tabela</button>
       <button type="button" class="btn-download" onclick="baixarTabela()">Baixar Tabela</button>
-      <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">suporte</button>
+      <button type="button" class="btn-whatsapp" onclick="enviarrWhatsApp()">suporte</button>
 
 
     </form>
@@ -95,9 +95,6 @@ Observação: ${obs}`;
 
 }
 
-function suporte() {
-  window.open(`https://wa.me/5571993209015?text=${mensagem}`, "_blank");
-}
   
   function abrirTabela() {
   window.open("tabela1.jpg", "_blank");
@@ -111,6 +108,12 @@ function baixarTabela() {
   link.click();
   document.body.removeChild(link);
 }
+
+  <script>
+function enviarrWhatsApp() {
+  window.open(`https://wa.me/5571993209015?text=${mensagem}`, "_blank");
+
+}  
 </script>
 </body>
 </html>
