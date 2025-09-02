@@ -14,6 +14,7 @@
     .btn-whatsapp { background: #25d366; color: white; }
     .btn-visualizar { background: #007bff; color: white; }
     .btn-download { background: #6c757d; color: white; }
+    .btn-email { background: #ff9800; color: white; }
     .btn-instagram { background: transparent; border: none; margin-top: 20px; display: flex; justify-content: center; }
     .btn-instagram img { width: 70px; height: 70px; }
     .logo { display: block; margin: 0 auto 20px; max-width: 180px; }
@@ -60,7 +61,9 @@
       <label for="obs">Observação</label>
       <textarea id="obs" name="obs" rows="3" placeholder="Digite observações se for cliete novo mandar end. cro cpf/cnpj"></textarea>
 
+      <!-- Botões -->
       <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
+      <button type="button" class="btn-email" onclick="enviarEmail()">Enviar por E-mail</button>
       <button type="button" class="btn-visualizar" onclick="abrirTabela()">Visualizar Tabela</button>
       <button type="button" class="btn-download" onclick="baixarTabela()">Baixar Tabela</button>
       <button type="button" class="btn-whatsapp" onclick="abrirSuporte()">💬 Suporte</button>
@@ -72,7 +75,7 @@
   </div>
 
 <script>
-function enviarWhatsApp() {
+function coletarDados() {
   const cliente = document.getElementById('cliente').value;
   const paciente = document.getElementById('paciente').value;
   const cor = document.getElementById('cor').value;
@@ -80,18 +83,27 @@ function enviarWhatsApp() {
   const material = document.getElementById('material').value;
   const obs = document.getElementById('obs').value;
 
-  const mensagem = `Cliente: ${cliente}%0A
+  return `Cliente: ${cliente}%0A
 Paciente: ${paciente}%0A
 Cor: ${cor}%0A
 Serviço: ${servico}%0A
 Material: ${material}%0A
 Observação: ${obs}`;
+}
 
+function enviarWhatsApp() {
+  const mensagem = coletarDados();
   window.open(`https://wa.me/5571992863990?text=${mensagem}`, "_blank");
 }
 
 function abrirSuporte() {
   window.open("https://wa.me/5571993209015?text=Olá,%20preciso%20de%20suporte!", "_blank");
+}
+
+function enviarEmail() {
+  const mensagem = coletarDados().replace(/%0A/g, "\n");
+  const assunto = "Solicitação de Serviço - Instituto Moisés Avelino";
+  window.location.href = `mailto:centrodeusinagemmprotese@gmail.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagem)}`;
 }
 
 function abrirTabela() {
